@@ -4,44 +4,56 @@ sidebar_position: 1
 
 # Overview
 
-Let's discover **Docusaurus in less than 5 minutes**.
+SafeDep provides a set of open source software components for visibility and policy control of 3rd party software dependencies. At its core, a [Supply Chain Security Gateway](concepts/gateway.md) can be setup to monitor and control consumption of 3rd party dependencies during an application build.
 
-## Getting Started
+## Example
 
-Get started by **creating a new site**.
+> The example below is for Java application builds using `gradle` package manager
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+* Setup [gateway](https://github.com/safedep/gateway) by following [Quickstart](getting-started/quickstart.md)
+* Clone [demo clients](https://github.com/safedep/demo-clients)
 
 ```bash
-npm init docusaurus@latest my-website classic
+git clone https://github.com/safedep/demo-client-java
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
+Run Java app build
 
 ```bash
-cd my-website
-npm run start
+cd demo-client-java && ./gradlew assemble --refresh-dependencies
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+Observe that the build failed with an error such as
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+```
+> Could not resolve all files for configuration ':app:compileClasspath'.
+> Could not resolve org.apache.logging.log4j:log4j:2.16.0.
+  Required by:
+      project :app
+  > Could not resolve org.apache.logging.log4j:log4j:2.16.0.
+      > Could not get resource 'http://localhost:10000/maven2/org/apache/logging/log4j/log4j/2.16.0/log4j-2.16.0.pom'.
+        > Could not GET 'http://localhost:10000/maven2/org/apache/logging/log4j/log4j/2.16.0/log4j-2.16.0.pom'. Received status code 403 from server: Forbidden
+```
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+### What happened?
+
+Access to `org.apache.log4j:log4j:2.16.0` was blocked by a security policy written in [Rego language](https://www.openpolicyagent.org/docs/latest/policy-language/)
+
+```rego
+violations[{"message": msg, "code": code}] {
+  input.target.artefact.group = "org.apache.logging.log4j"
+  input.target.artefact.name = "log4j"
+  semver.compare(input.target.artefact.version, "2.17.0") = -1
+
+  msg := "Old and vulnerable version of log4j2 is not allowed"
+  code := "old_and_vulnerable_software"
+}
+```
+
+## Architecture
+
+![](../static/img/supply-chain-gateway-hld.png)
+
+## Showcase
+
+<!-- TODO: Add a screen cast video -->

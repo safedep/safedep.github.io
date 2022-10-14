@@ -18,8 +18,8 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Out of box <a href='#'>OPA</a> integration allows development
-        and enforcement of flexible security policies
+        Gateway's out of box <a href='https://openpolicyagent.org' target='_blank'>OPA</a> integration
+        allows development and enforcement of flexible and proactive security policies
       </>
     ),
   },
