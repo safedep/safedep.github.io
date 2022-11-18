@@ -5,6 +5,17 @@ sidebar_position: 1
 
 # Quick Start
 
+:::info
+This approach for installation is suitable for a quick evaluation of security
+gateway capability. For production deployment options, refer to
+[installation](installation.md)
+:::
+
+## Prerequisite
+
+* Docker and Docker Compose
+* OpenSSL (for generating keys and certificate for mTLS)
+
 ## Setup Repository
 
 Clone deployment repository
@@ -23,16 +34,26 @@ Switch to local setup configuration and scripts
 cd gateway-deployment/local
 ```
 
+Run bootstrap script to generate environment configuration and mTLS secrets
+
+```bash
+./bootstrap.sh
+```
+
+> **Note:** `bootstrap.sh` creates `.env` with auto-generated secrets and mTLS key, certs in `pki/`. It needs `openssl` to be installed.
+
 Bring up gateway and associated tools
 
 ```bash
-docker-compose up -d
+docker compose --profile dashboard up -d
 ```
+
+> The `dashboard` profile activates OpenSearch and OpenSearch dashboard containers for visibility of Gateway events.
 
 Verify that all the services are up and running
 
 ```bash
-docker-compose ps
+docker compose --profile dashboard ps
 ```
 
 ## Configure Build Environment
@@ -85,7 +106,20 @@ cd demo-client-java && ./gradlew assemble --refresh-dependencies
 
 ## View Dashboard
 
+:::caution
+OpenSearch and OpenSearch Dashboard is used *without* security plugin as a stop gap solution for visibility of gateway events. This is not intended for production use and should be setup independently.
+:::
+
 Navigate to `http://localhost:5601` to view the [OpenSearch](#) dashboard for visibility of 3rd party dependencies flowing through the gateway.
+
+
+## Tear Down
+
+Stop all services
+
+```bash
+docker compose --profile dashboard down
+```
 
 ## Next Steps
 

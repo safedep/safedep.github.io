@@ -29,7 +29,7 @@ const FeatureList = [
     description: (
       <>
         Optional integration with <a href='/docs/concepts/raya'>Raya</a> provides
-        enriched context for an artifact (package) allowing extensive policy decisions
+        enriched context for an artifact (package) allowing rich policy decisions
       </>
     ),
   },
