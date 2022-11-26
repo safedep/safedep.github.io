@@ -16,7 +16,7 @@ gateway capability. For production deployment options, refer to
 * Docker and Docker Compose
 * OpenSSL (for generating keys and certificate for mTLS)
 
-## Setup Repository
+## Get Deployment Tools
 
 Clone deployment repository
 
@@ -56,38 +56,6 @@ Verify that all the services are up and running
 docker compose --profile dashboard ps
 ```
 
-## Configure Build Environment
-
-> The example below configures your local environment for `gradle` package manager to use the gateway as the central repository
-
-Clone `pacman`, which is the *package manager* manager. Simply put, it configure supported package managers like `maven`, `gradle`, `pip` etc. to use the gateway as the repository instead of using public repositories directly.
-
-```bash
-git clone https://github.com/safedep/pacman.git
-```
-
-Configure `pacman`
-
-```bash
-cd pacman && ./pacman.sh configure
-```
-
-Enter values for local environment
-
-```
-Gateway URL: http://localhost:10000
-Gateway Username: local-demo
-Gateway Password: <anything>
-```
-
-Configure `gradle` to use the security gateway
-
-```bash
-./pacman.sh setup-gradle
-```
-
-> To clean up and remove any configuration installed by `pacman`, run `./pacman.sh clean` after completing the Quick Start
-
 ## Run a Build
 
 > This example requires Java 11+ to be installed in your system.
@@ -103,6 +71,9 @@ Build the app
 ```bash
 cd demo-client-java && ./gradlew assemble --refresh-dependencies
 ```
+
+> **Note:** `build.gradle` in the demo client is preconfigured to use gateway.
+> For configuring other environments refer to [build configuration](build-configuration)
 
 ## View Dashboard
 
