@@ -60,7 +60,7 @@ const config = {
         title: 'SafeDep',
         logo: {
           alt: 'SafeDep Logo',
-          src: 'img/logo.svg',
+          src: 'img/undraw_outer_space_re_u9vd.svg',
         },
         items: [
           {

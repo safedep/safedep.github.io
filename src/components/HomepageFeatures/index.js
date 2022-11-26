@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Visibility',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/index-obs1.svg').default,
     description: (
       <>
         SafeDep Gateway sits between package managers and public repositories
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Policy Control',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/undraw_version_control_re_mg66.svg').default,
     description: (
       <>
         Gateway's out of box <a href='https://openpolicyagent.org' target='_blank'>OPA</a> integration
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Open Source Insights',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/undraw_dashboard_re_3b76.svg').default,
     description: (
       <>
         Optional integration with <a href='/docs/concepts/raya-data-platform-overview'>Insights API</a> provides
