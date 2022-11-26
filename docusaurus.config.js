@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'SafeDep',
-  tagline: 'Visibility and policy control for 3rd party dependencies',
+  tagline: 'Visibility and policy control for software supply chain',
   url: 'https://safedep.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -100,7 +100,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: '#',
               },
             ],
           },
