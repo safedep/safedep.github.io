@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageShowcase from '@site/src/components/HomepageShowcase';
 
 import styles from './index.module.css';
 
@@ -31,10 +32,11 @@ export default function Home() {
   return (
     <Layout
       title={`SafeDep | Establish trust in software supply chain`}
-      description="Description will go into a meta tag in <head />">
+      description={`SafeDep security gateway and policy control helps create a security gate to only allow acceptable and trusted 3rd party software dependencies to your build environment`}>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <HomepageShowcase />
       </main>
     </Layout>
   );

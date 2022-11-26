@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 id: raya-data-platform-overview
 ---
 
-# Data Platform
+# Insights
 
 :::info
 The data platform API is currently in development and is available only for
