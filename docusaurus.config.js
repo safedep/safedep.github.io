@@ -37,14 +37,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/safedep/safedep.io/tree/main',
+            'https://github.com/safedep/safedep.github.io/tree/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/safedep/safedep.io/tree/main',
+            'https://github.com/safedep/safedep.github.io/tree/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

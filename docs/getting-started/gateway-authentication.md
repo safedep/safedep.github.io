@@ -42,8 +42,12 @@ An username following the convention `<projectId>/<user>@<organization>` can be
 used to add additoinal context identifiers in gateway generated events. This is
 useful for traceability of artifacts to specific build projects.
 
+## Protecting an Upstream Route
+
 The `authenticator` can then be associated to upstreams to enable
-authentication for specific routes (e.g. `/maven2`) in the gateway
+authentication for specific routes (e.g. `/maven2`) in the gateway. Different
+routes can be associated with different authentication providers. This allows
+flexible access control for different use-cases.
 
 ```json
 "upstreams": [
