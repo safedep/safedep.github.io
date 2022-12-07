@@ -6,6 +6,10 @@ sidebar_position: 1
 
 SafeDep provides a set of open source software components for visibility and policy control of 3rd party software dependencies. At its core, a [Supply Chain Security Gateway](concepts/gateway.md) can be setup to monitor and control consumption of 3rd party dependencies during an application build.
 
+## Showcase
+
+[![asciicast](https://asciinema.org/a/fnAHzwrKr1rs80n3eTDgZ0BAu.svg)](https://asciinema.org/a/fnAHzwrKr1rs80n3eTDgZ0BAu)
+
 ## Example
 
 > The example below is for Java application builds using `gradle` package manager
@@ -54,6 +58,3 @@ violations[{"message": msg, "code": code}] {
 
 ![](../static/img/supply-chain-gateway-hld.png)
 
-## Showcase
-
-<!-- TODO: Add a screen cast video -->
