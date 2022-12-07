@@ -15,7 +15,7 @@ SafeDep provides a set of open source software components for visibility and pol
 > The example below is for Java application builds using `gradle` package manager
 
 * Setup [gateway](https://github.com/safedep/gateway) by following [Quickstart](getting-started/quickstart.md)
-* Clone [demo clients](https://github.com/safedep/demo-clients)
+* Clone [demo clients](https://github.com/safedep/demo-clients) once the gateway is setup locally
 
 ```bash
 git clone https://github.com/safedep/demo-client-java
