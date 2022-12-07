@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'SafeDep',
-  tagline: 'Visibility and policy control for 3rd party dependencies',
+  tagline: 'Visibility and policy control for 3rd party OSS dependencies',
   url: 'https://safedep.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -37,14 +37,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/safedep/safedep.io/tree/main',
+            'https://github.com/safedep/safedep.github.io/tree/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/safedep/safedep.io/tree/main',
+            'https://github.com/safedep/safedep.github.io/tree/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -60,7 +60,7 @@ const config = {
         title: 'SafeDep',
         logo: {
           alt: 'SafeDep Logo',
-          src: 'img/logo.svg',
+          src: 'img/undraw_outer_space_re_u9vd.svg',
         },
         items: [
           {
@@ -100,7 +100,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: '#',
               },
             ],
           },

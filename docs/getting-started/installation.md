@@ -6,6 +6,11 @@ toc_max_heading_level: 5
 
 # Installation
 
+:::info
+**Note:** Instructions in this document are meant for higher environments (such
+as production) deployment. They are not required for [quickstart](quickstart)
+:::
+
 The security gateway can be deployed using any container orchestrator. However,
 for a production setup, following deployment configuration is recommended
 

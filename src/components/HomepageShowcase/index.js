@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Visibility',
-    Svg: require('@site/static/img/index-obs1.svg').default,
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
         SafeDep Gateway sits between package managers and public repositories
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Policy Control',
-    Svg: require('@site/static/img/undraw_version_control_re_mg66.svg').default,
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
         Gateway's out of box <a href='https://openpolicyagent.org' target='_blank'>OPA</a> integration
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Open Source Insights',
-    Svg: require('@site/static/img/undraw_dashboard_re_3b76.svg').default,
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
         Optional integration with <a href='/docs/concepts/raya-data-platform-overview'>Insights API</a> provides
@@ -35,29 +35,33 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function ShowcaseDashboard() {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+    <div className={clsx('row')}>
+      <div className={clsx('col col--12')}>
+        <div className="text--center">
+          <img src="/img/opensearch-db1.png" className={styles.showcaseimg} />
+        </div>
+        <div className="text--center padding-horiz--md">
+          <p>
+            Gateway events can be consumed by search and visualization tools to
+            build use-case specific dashboards.
+          </p>
+          <p>
+            <a href="/docs/getting-started/quickstart"
+              className="button button--primary button--lg">Quick Start</a>
+          </p>
+        </div>
       </div>
     </div>
   );
 }
 
-export default function HomepageFeatures() {
+export default function HomepageShowcase() {
   return (
-    <section className={styles.features}>
+    <section className={styles.showcase}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+        <ShowcaseDashboard />
       </div>
     </section>
   );
