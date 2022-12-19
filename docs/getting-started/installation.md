@@ -30,3 +30,5 @@ This section of the document is work in progress
 :::info
 This section of the document is work in progress
 :::
+
+1. [Single Node Kubernetes Installation with Minikube](https://github.com/safedep/gateway-deployment/tree/main/kubernetes/minikube)
